@@ -3,6 +3,7 @@ import Navigation from "./components/Navbar";
 import Home from "./pages/Home";
 import Forecast from "./pages/Forecast";
 import Favorites from "./pages/Favorites";
+import "./App.css";
 
 function App() {
   return (

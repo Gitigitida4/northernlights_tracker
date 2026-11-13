@@ -1,14 +1,10 @@
 export async function fetchWeather(lat, lon) {
-    const url =
-        `https://api.open-meteo.com/v1/forecast?latitude=${lat}` +
-        `&longitude=${lon}` +
-        `&daily=temperature_2m_max` +
-        `&timezone=auto`;
-
-    const response = await fetch(url);
+    const response = await fetch(
+        `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=cloud_cover`
+    );
 
     if (!response.ok) {
-        throw new Error("API error");
+        throw new Error("API Error");
     }
 
     return await response.json();
